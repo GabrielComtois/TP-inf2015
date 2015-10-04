@@ -6,7 +6,7 @@ class TP1 {
    public static void main (String [] args) {
       JSONObject entree = new JSONObject();
 
-      entree.put("nombre_eleves", new Integer(23);
+      entree.put("nombre_eleves", new Integer(23));
       entree.put("age", new Integer(8));
       entree.put("activites", '[');
 
