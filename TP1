@@ -1,14 +1,35 @@
 // début du code pour le tp1
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 class TP1 {
 
    public static void main (String [] args) {
+   
       JSONObject entree = new JSONObject();
-
+      JSONObject elements = new JSONObject();
+      JSONArray liste = new JSONArray();
+      
       entree.put("nombre_eleves", new Integer(23));
       entree.put("age", new Integer(8));
-      entree.put("activites", '[');
+      
+      
+      elements.put("description", "Spectacle de magie");
+      elements.put("nombre_parents_accompagnateurs", new Integer(4));
+      elements.put("prix_unitaire_enfant", "3.45 $");
+      elements.put("prix_unitaire_adulte", "7.00 $");
+      elements.put("transport", new Integer(0));
+      elements.put("distance", new Integer(0));
+      elements.put("date", "2015-10-14");
+      
+      entree.put("activites", elements);
+      
+      FileWriter texte = new FileWriter("c:\\entree.json");
+		file.write(entree.toJSONString());
+		file.flush();
+		file.close();
 
       System.out.print(entree);
    }
