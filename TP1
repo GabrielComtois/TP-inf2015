@@ -4,27 +4,39 @@ import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-class TP1 {
+public class TP1 {
 
    public static void main (String [] args) {
    
       JSONObject entree = new JSONObject();
-      JSONObject elements = new JSONObject();
+      JSONObject elementsun = new JSONObject();
+      JSONObject elementsdeux = new JSONObject();
+      JSONObject elementstrois = new JSONObject();
       JSONArray liste = new JSONArray();
       
       entree.put("nombre_eleves", new Integer(23));
       entree.put("age", new Integer(8));
       
       
-      elements.put("description", "Spectacle de magie");
-      elements.put("nombre_parents_accompagnateurs", new Integer(4));
-      elements.put("prix_unitaire_enfant", "3.45 $");
-      elements.put("prix_unitaire_adulte", "7.00 $");
-      elements.put("transport", new Integer(0));
-      elements.put("distance", new Integer(0));
-      elements.put("date", "2015-10-14");
+      elementsun.put("description", "Spectacle de magie");
+      elementsun.put("nombre_parents_accompagnateurs", new Integer(4));
+      elementsun.put("prix_unitaire_enfant", "3.45 $");
+      elementsun.put("prix_unitaire_adulte", "7.00 $");
+      elementsun.put("transport", new Integer(0));
+      elementsun.put("distance", new Integer(0));
+      elementsun.put("date", "2015-10-14");
       
-      entree.put("activites", elements);
+      elementsdeux.put("description", "Sortie au Mont-Royal");
+      elementsdeux.put("nombre_parents_accompagnateurs", new Integer(0));
+      elementsdeux.put("prix_unitaire_enfant", "0.00 $");
+      elementsdeux.put("prix_unitaire_adulte", "0.00 $");
+      elementsdeux.put("transport", new Integer(1));
+      elementsdeux.put("distance", new Integer(18));
+      elementsdeux.put("date", "2015-12-15");
+      
+      entree.put("activites", elementsun);
+      entree.put(elementsdeux);
+      entree.put(elementstrois);
       
       FileWriter texte = new FileWriter("c:\\entree.json");
 		file.write(entree.toJSONString());
